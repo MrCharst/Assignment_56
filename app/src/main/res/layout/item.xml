@@ -4,19 +4,19 @@
     android:gravity="center"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="10dp">
+    android:layout_margin="10dp"
+    android:background="@drawable/backgroud_item_recycler">
     <ImageView
-        android:id="@+id/imageViewItem"
+        android:id="@+id/imvIcon"
         android:gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:src="@drawable/ic_home"
-        android:contentDescription="home" />
+        android:contentDescription="@string/imvIconRecyclerDes" />
     <TextView
         android:gravity="center"
-        android:textSize="16dp"
-        android:id="@+id/textViewName"
-        android:text="Home"
+        android:id="@+id/tvName"
+        android:textSize="11sp"
         android:layout_width="50dp"
         android:layout_height="wrap_content"/>
 </LinearLayout>
