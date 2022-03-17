@@ -2,14 +2,4 @@
     <string name="app_name">Assignment_5_6</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="imvIconRecyclerDes">home</string>
-    <string name="btnHome_Des">Home</string>
-    <string name="imvCustomDes">Custom</string>
-    <string name="tvCustom">Custom</string>
-    <string name="imvLayoutDes">Layout</string>
-    <string name="tvLayout">Layout</string>
-    <string name="imvTextDes">Text</string>
-    <string name="tvText">Text</string>
-    <string name="imvDrawDes">Draw</string>
-    <string name="tvDraw">Draw</string>
 </resources>

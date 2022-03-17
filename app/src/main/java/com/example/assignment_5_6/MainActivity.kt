@@ -6,12 +6,14 @@ import com.example.assignment_5_6.ui.MainFragment
 
 class MainActivity : AppCompatActivity() {
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
+        setContentView(R.layout.test)
         supportFragmentManager.beginTransaction().replace(R.id.fragmentMain, MainFragment())
             .commitAllowingStateLoss()
 
     }
+
+
 }
