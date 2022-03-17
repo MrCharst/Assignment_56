@@ -1,23 +1,27 @@
 package com.example.assignment_5_6.ui
 
-import android.graphics.Point
+import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.RecyclerView
-import com.example.assignment_5_6.adapter.ArcLayoutManager
-import com.example.assignment_5_6.adapter.CustomLayoutManager
-import com.example.assignment_5_6.adapter.ThingAdapter
+import com.example.assignment_5_6.adapter.ItemAdapter
+import com.example.assignment_5_6.custom.CustomArcLayoutManager
 import com.example.assignment_5_6.databinding.FragmentMainBinding
-import com.example.assignment_5_6.viewmodel.MainViewModel
+import com.example.assignment_5_6.model.ItemRecycler
+import kotlin.properties.Delegates
 
 
-class MainFragment : Fragment() {
+class MainFragment : Fragment(), ItemAdapter.OnItemClickListener {
     private lateinit var binding: FragmentMainBinding
-    private var mainViewModel = MainViewModel()
+    private lateinit var listItem: ArrayList<ItemRecycler>
+
+    private val adapter = ItemAdapter(this)
+
+    private var itemBottomId by Delegates.notNull<Int>()
+    private var isRecyclerViewShowing: Boolean = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,39 +33,54 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.mainViewModel = mainViewModel
 
-        val recyclerView: RecyclerView = binding.recyclerView
+        binding.recyclerView.adapter = adapter
 
-        mainViewModel.check.observe(viewLifecycleOwner, Observer<String> { check ->
-            when (check) {
-                "Custom" -> {
-                    recyclerView.adapter = ThingAdapter(mainViewModel.changeData())
-                }
-                "Layout" -> {
-                    recyclerView.adapter = ThingAdapter(mainViewModel.changeData())
-                }
-                "Draw" -> {
-                    recyclerView.adapter = ThingAdapter(mainViewModel.changeData())
-                }
-                "Text" -> {
-                    recyclerView.adapter = ThingAdapter(mainViewModel.changeData())
-                }
-            }
-        })
+        binding.constraintBottom.listItem[0].iconBottom.setOnClickListener {
+            listItem = arrayListOf(ItemRecycler( "Item 1"), ItemRecycler( "Item 2"), ItemRecycler( "Item 3"))
+            setLayout(listItem, 0)
+        }
 
-        val size = Point()
-        activity?.windowManager?.defaultDisplay?.getSize(size)
-        val screenWidth = size.x
-        recyclerView.layoutParams.height = screenWidth / 2
-        recyclerView.layoutManager = CustomLayoutManager(resources, screenWidth)
-//            recyclerView.layoutManager =ArcLayoutManager(requireContext(),5)
+        binding.constraintBottom.listItem[1].iconBottom.setOnClickListener {
+            listItem = arrayListOf(ItemRecycler( "Item 1"), ItemRecycler( "Item 2"))
+            setLayout(listItem, 1)
+        }
 
+        binding.constraintBottom.listItem[2].iconBottom.setOnClickListener {
+            listItem = arrayListOf(ItemRecycler( "Item 1"))
+            setLayout(listItem, 2)
+        }
 
+        binding.constraintBottom.listItem[3].iconBottom.setOnClickListener {
+            listItem = arrayListOf(ItemRecycler( "Item 1"), ItemRecycler( "Item 2"), ItemRecycler( "Item 3"), ItemRecycler( "Item 4"), ItemRecycler( "Item 5"), ItemRecycler("Item 6"))
+            setLayout(listItem, 3)
+        }
     }
 
+    private fun setLayout(listItem: ArrayList<ItemRecycler>, idItem: Int) {
+        binding.constraintBottom.setChecked(idItem)
+        if(!isRecyclerViewShowing) {
+            binding.recyclerView.visibility = View.VISIBLE
+            ObjectAnimator.ofFloat(binding.recyclerView, View.TRANSLATION_Y, 300f, 0f).setDuration(1000).start()
+            setValue(listItem)
+            isRecyclerViewShowing = true
+        } else if(binding.recyclerView.visibility == View.VISIBLE && itemBottomId == idItem) {
+            ObjectAnimator.ofFloat(binding.recyclerView, View.TRANSLATION_Y, 0f, 300f).setDuration(1000).start()
+            isRecyclerViewShowing = false
+            binding.constraintBottom.setUnchecked(idItem)
+        } else if(isRecyclerViewShowing && itemBottomId != idItem) {
+            setValue(listItem)
+        }
+        itemBottomId = idItem
+    }
 
+    private fun setValue(listItemUpdate: ArrayList<ItemRecycler>) {
+        adapter.setData(listItemUpdate)
+        binding.recyclerView.layoutManager = CustomArcLayoutManager(requireContext(), listItemUpdate.size > 4)
+    }
 
-
+    override fun onItemClick(position: Int) {
+        Toast.makeText(context, listItem[position].name, Toast.LENGTH_SHORT).show()
+    }
 }
 
