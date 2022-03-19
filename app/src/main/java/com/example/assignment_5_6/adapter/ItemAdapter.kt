@@ -85,8 +85,6 @@ class ItemAdapter(private val listener: OnItemClickListener): RecyclerView.Adapt
 
             return oldItem == newItem
         }
-
-
     }
 
 }
