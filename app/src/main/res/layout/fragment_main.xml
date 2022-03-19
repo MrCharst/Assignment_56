@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <com.example.assignment_5_6.custom.BottomNavigation
+    <com.example.assignment_5_6.custom.CustomBottomNavigation
         android:id="@+id/constraintBottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

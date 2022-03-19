@@ -8,7 +8,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.example.assignment_5_6.R
 import com.example.assignment_5_6.model.ItemBottom
 
-class BottomNavigation: ConstraintLayout {
+class CustomBottomNavigation: ConstraintLayout {
 
     private lateinit var item1: ImageButton
     private lateinit var item2: ImageButton
