@@ -2,7 +2,7 @@ package com.example.assignment_5_6
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.assignment_5_6.ui.MainFragment
+import com.example.assignment_5_6.view.MainFragment
 
 class MainActivity : AppCompatActivity() {
 

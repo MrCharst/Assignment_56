@@ -1,4 +1,4 @@
-package com.example.assignment_5_6.adapter
+package com.example.assignment_5_6.model.adapter
 
 import android.animation.ObjectAnimator
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.assignment_5_6.R
 import com.example.assignment_5_6.model.ItemRecycler
 
-class ItemAdapter(private val listener: OnItemClickListener): RecyclerView.Adapter<ItemAdapter.ThingHolder>() {
+class ItemRecyclerAdapter(private val listener: OnItemClickListener): RecyclerView.Adapter<ItemRecyclerAdapter.ThingHolder>() {
 
     private var listItem = arrayListOf<ItemRecycler>()
 

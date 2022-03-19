@@ -1,4 +1,4 @@
-package com.example.assignment_5_6.ui
+package com.example.assignment_5_6.view
 
 import android.animation.ObjectAnimator
 import android.os.Bundle
@@ -7,18 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.assignment_5_6.adapter.ItemAdapter
+import com.example.assignment_5_6.model.adapter.ItemRecyclerAdapter
 import com.example.assignment_5_6.custom.CustomArcLayoutManager
 import com.example.assignment_5_6.databinding.FragmentMainBinding
 import com.example.assignment_5_6.model.ItemRecycler
 import kotlin.properties.Delegates
 
 
-class MainFragment : Fragment(), ItemAdapter.OnItemClickListener {
+class MainFragment : Fragment(), ItemRecyclerAdapter.OnItemClickListener {
     private lateinit var binding: FragmentMainBinding
 
     private lateinit var listItem: ArrayList<ItemRecycler>
-    private val adapter = ItemAdapter(this)
+    private val adapter = ItemRecyclerAdapter(this)
 
     private var itemBottomId by Delegates.notNull<Int>()
     private var isRecyclerViewShowing: Boolean = false
