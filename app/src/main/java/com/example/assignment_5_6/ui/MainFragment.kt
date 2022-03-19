@@ -16,8 +16,8 @@ import kotlin.properties.Delegates
 
 class MainFragment : Fragment(), ItemAdapter.OnItemClickListener {
     private lateinit var binding: FragmentMainBinding
-    private lateinit var listItem: ArrayList<ItemRecycler>
 
+    private lateinit var listItem: ArrayList<ItemRecycler>
     private val adapter = ItemAdapter(this)
 
     private var itemBottomId by Delegates.notNull<Int>()
