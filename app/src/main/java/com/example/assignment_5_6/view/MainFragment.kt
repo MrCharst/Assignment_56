@@ -61,11 +61,11 @@ class MainFragment : Fragment(), ItemRecyclerAdapter.OnItemClickListener {
         binding.constraintBottom.setChecked(idItem)
         if(!isRecyclerViewShowing) {
             binding.recyclerView.visibility = View.VISIBLE
-            ObjectAnimator.ofFloat(binding.recyclerView, View.TRANSLATION_Y, 300f, 0f).setDuration(1000).start()
+            ObjectAnimator.ofFloat(binding.recyclerView, View.TRANSLATION_Y, rvTranslateAnimDistance, 0f).setDuration(rvTranslateAnimDuration).start()
             setValue(listItem)
             isRecyclerViewShowing = true
         } else if(binding.recyclerView.visibility == View.VISIBLE && itemBottomId == idItem) {
-            ObjectAnimator.ofFloat(binding.recyclerView, View.TRANSLATION_Y, 0f, 300f).setDuration(1000).start()
+            ObjectAnimator.ofFloat(binding.recyclerView, View.TRANSLATION_Y, 0f, rvTranslateAnimDistance).setDuration(rvTranslateAnimDuration).start()
             isRecyclerViewShowing = false
             binding.constraintBottom.setUnchecked(idItem)
         } else if(isRecyclerViewShowing && itemBottomId != idItem) {
@@ -81,6 +81,11 @@ class MainFragment : Fragment(), ItemRecyclerAdapter.OnItemClickListener {
 
     override fun onItemClick(position: Int) {
         Toast.makeText(context, listItem[position].name, Toast.LENGTH_SHORT).show()
+    }
+
+    companion object {
+        const val rvTranslateAnimDistance = 300f
+        const val rvTranslateAnimDuration = 1000L
     }
 }
 
