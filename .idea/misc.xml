@@ -5,14 +5,16 @@
       <map>
         <entry key="..\:/AndroidProjects/FPTFresher/AndroidAdvance/AndroidAdvanceAssignments/AndroidAdvanceDay56/app/src/main/res/drawable-v24/backgroud_item_bottom.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/FPTFresher/AndroidAdvance/AndroidAdvanceAssignments/AndroidAdvanceDay56/app/src/main/res/drawable-v24/backgroud_item_recycler.xml" value="0.1" />
+        <entry key="..\:/AndroidProjects/FPTFresher/AndroidAdvance/AndroidAdvanceAssignments/AndroidAdvanceDay56/app/src/main/res/drawable-v24/backgroud_item_recycler_clicked.xml" value="0.137" />
         <entry key="..\:/AndroidProjects/FPTFresher/AndroidAdvance/AndroidAdvanceAssignments/AndroidAdvanceDay56/app/src/main/res/drawable-v24/circle.xml" value="0.151" />
         <entry key="..\:/AndroidProjects/FPTFresher/AndroidAdvance/AndroidAdvanceAssignments/AndroidAdvanceDay56/app/src/main/res/drawable/background.xml" value="0.151" />
         <entry key="..\:/AndroidProjects/FPTFresher/AndroidAdvance/AndroidAdvanceAssignments/AndroidAdvanceDay56/app/src/main/res/drawable/background_imgbutton.xml" value="0.151" />
+        <entry key="..\:/AndroidProjects/FPTFresher/AndroidAdvance/AndroidAdvanceAssignments/AndroidAdvanceDay56/app/src/main/res/drawable/background_recycler.xml" value="0.137" />
         <entry key="..\:/AndroidProjects/FPTFresher/AndroidAdvance/AndroidAdvanceAssignments/AndroidAdvanceDay56/app/src/main/res/drawable/background_recyler.xml" value="0.151" />
         <entry key="..\:/AndroidProjects/FPTFresher/AndroidAdvance/AndroidAdvanceAssignments/AndroidAdvanceDay56/app/src/main/res/drawable/ic_custom.xml" value="0.151" />
         <entry key="..\:/AndroidProjects/FPTFresher/AndroidAdvance/AndroidAdvanceAssignments/AndroidAdvanceDay56/app/src/main/res/drawable/ic_layout.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/FPTFresher/AndroidAdvance/AndroidAdvanceAssignments/AndroidAdvanceDay56/app/src/main/res/layout/activity_main.xml" value="0.12760416666666666" />
-        <entry key="..\:/AndroidProjects/FPTFresher/AndroidAdvance/AndroidAdvanceAssignments/AndroidAdvanceDay56/app/src/main/res/layout/custom_bottom_navigation.xml" value="0.16" />
+        <entry key="..\:/AndroidProjects/FPTFresher/AndroidAdvance/AndroidAdvanceAssignments/AndroidAdvanceDay56/app/src/main/res/layout/custom_bottom_navigation.xml" value="0.12138728323699421" />
         <entry key="..\:/AndroidProjects/FPTFresher/AndroidAdvance/AndroidAdvanceAssignments/AndroidAdvanceDay56/app/src/main/res/layout/fragment_main.xml" value="0.2" />
         <entry key="..\:/AndroidProjects/FPTFresher/AndroidAdvance/AndroidAdvanceAssignments/AndroidAdvanceDay56/app/src/main/res/layout/item.xml" value="0.21041666666666667" />
         <entry key="..\:/AndroidProjects/FPTFresher/AndroidAdvance/AndroidAdvanceAssignments/AndroidAdvanceDay56/app/src/main/res/layout/test.xml" value="0.12760416666666666" />
