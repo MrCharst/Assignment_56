@@ -19,8 +19,8 @@ class ItemRecyclerAdapter(private val listener: OnItemClickListener): RecyclerVi
 
         fun bindData(item: ItemRecycler) {
             tvName.text = item.name
-            ObjectAnimator.ofFloat(itemView, View.SCALE_X, 0f, 1f).setDuration(((listItem.size-adapterPosition)*500).toLong()).start()
-            ObjectAnimator.ofFloat(itemView, View.SCALE_Y, 0f, 1f).setDuration(((listItem.size-adapterPosition)*500).toLong()).start()
+            ObjectAnimator.ofFloat(itemView, View.SCALE_X, 0f, 1f).setDuration(((1+adapterPosition)*500).toLong()).start()
+            ObjectAnimator.ofFloat(itemView, View.SCALE_Y, 0f, 1f).setDuration(((1+adapterPosition)*500).toLong()).start()
         }
 
         init {
